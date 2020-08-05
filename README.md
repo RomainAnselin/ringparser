@@ -1,4 +1,4 @@
-Utility to parse the ring of cassandra for vnodes from `nodetool ring`
+Utility to parse the ring of cassandra for vnodes from `nodetool ring` to check imbalance related to vnodes distribution
 
 TODO:
 - Currently only work with one DC, requires to split the nodetool ring per DC.
