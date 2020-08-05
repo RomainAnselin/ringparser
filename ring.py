@@ -1,12 +1,16 @@
 from heapq import nlargest
 from heapq import nsmallest
+import sys
 
-#filename = "ring_3.txt"
-#filename = "/home/romain/zd/BNP_Paribas_Corporate_&_Institutional_Banking/57151/nodetool_ring.lst"
-#filename="/home/romain/tickets/Datastax/59956/ring"
-#filename="/home/romain/zd/Norauto_International/61892/diagnostics/CassandraClusterProdOPS-diagnostics-2020_06_22_12_21_39_UTC/nodes/192.168.1.22/nodetool/ring"
-#filename="/home/romain/zd/Danske_Bank_A/S/62594/ringAZW.txt"
-filename="/home/romain/zd/Ericsson_AB/63678/diag-10.96.4.141/10.96.4.141/nodetool/ring2"
+# Check arguments
+# (note 2 includes arg 0 which is this script!)
+if len(sys.argv) == 2:
+    filename=sys.argv[1]
+else:
+    print ("\n***",sys.argv[0], "***\n")
+    print ('Incorrect number of arguments, please run script as follows:')
+    print ('\n\n'+str(sys.argv[0])+' <Extract of one DC nodetool ring>')
+    sys.exit(0)
 
 token_dictionary = {}
 with open(filename) as f:
